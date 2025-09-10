@@ -3,41 +3,30 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-// --- Import a few spice supporting elements (small decorative ones only) ---
-import p1_rightelem1 from "@/public/home/hero/product1/rightelem1.webp";
-import p1_rightelem2 from "@/public/home/hero/product1/rightelem2.webp";
-import p2_rightelem3 from "@/public/home/hero/product2/rightelem3.webp";
-import p3_leftelem1 from "@/public/home/hero/product3/leftelem1.webp";
+// Background
+import BackgroundImage from "@/public/home/hero/background.webp";
+
+// Decorative spices
+import spice1 from "@/public/home/hero/product1/rightelem1.webp";
+import spice2 from "@/public/home/hero/product1/rightelem2.webp";
+import spice3 from "@/public/home/hero/product2/rightelem3.webp";
 
 export default function MobileHero() {
     const slides = [
         {
             id: 0,
-            heading: "A Legacy of Flavor Since 1993",
-            sub: "Crafting authentic Indian spices with care & excellence.",
-            color: "#b91c1c",
-            bg: "radial-gradient(120% 120% at 50% 90%, #fff 20%, #fca5a5 100%)",
+            heading: "The Golden Touch In Every Perfect Blend",
+            sub: "Crafting authentic Turmeric Powder with purity and care.",
         },
         {
             id: 1,
-            heading: "32+ Years of Trust in Every Blend",
-            sub: "From Vasai to nationwide kitchens, delivering purity & tradition.",
-            color: "#065f46",
-            bg: "radial-gradient(120% 120% at 50% 90%, #fff 20%, #6ee7b7 100%)",
+            heading: "The Heartbeat of Every Indian Kitchen",
+            sub: "Premium Garam Masala that brings tradition to your table.",
         },
         {
             id: 2,
-            heading: "50+ Unique Spice Blends",
-            sub: "Elevating homes, restaurants & global cuisines with authenticity.",
-            color: "#7c2d12",
-            bg: "radial-gradient(120% 120% at 50% 90%, #fff 20%, #fbbf24 100%)",
-        },
-        {
-            id: 3,
-            heading: "Certified for Quality & Care",
-            sub: "FSSAI, AGMARK & MSME certified for safety & trust.",
-            color: "#1e3a8a",
-            bg: "radial-gradient(120% 120% at 50% 90%, #fff 20%, #93c5fd 100%)",
+            heading: "Spice Up Your Recipes With Natural Freshness",
+            sub: "Authentic Kashmiri Chili Powder for vibrant flavors.",
         },
     ];
 
@@ -69,91 +58,64 @@ export default function MobileHero() {
 
     return (
         <section
-            className="relative h-[90vh]  w-full flex flex-col justify-center items-start px-8 lg:hidden overflow-hidden "
+            className="relative min-h-screen w-full flex items-center justify-center px-6 lg:hidden overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
         >
-            {/* Animated Gradient Background */}
-            <motion.div
-                key={activeItem.id}
-                className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: activeItem.bg,
-                    backgroundSize: "130% 130%",
-                }}
-                animate={{
-                    backgroundPosition: ["0% 40%", "100% 60%", "0% 40%"],
-                }}
-                transition={{
-                    duration: 18,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
+            {/* Background */}
+            <Image
+                src={BackgroundImage}
+                alt="Background"
+                fill
+                priority
+                className="object-cover absolute inset-0 -z-10"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent -z-10" />
 
-            {/* Floating Decorative Spice Elements (right side) */}
+            {/* Floating spices */}
             <motion.div
                 animate={{ y: [0, -12, 0] }}
-                transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="absolute top-[20%] right-6 w-14 h-14 z-10"
-            >
-                <Image
-                    src={p1_rightelem1}
-                    alt="spice"
-                    fill
-                    className="object-contain"
-                />
-            </motion.div>
-
-            <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="absolute top-[35%] right-16 w-16 h-16 z-10"
-            >
-                <Image
-                    src={p1_rightelem2}
-                    alt="spice"
-                    fill
-                    className="object-contain"
-                />
-            </motion.div>
-
-            <motion.div
-                animate={{ y: [0, -10, 0] }}
                 transition={{
                     duration: 7,
                     repeat: Infinity,
                     ease: "easeInOut",
                 }}
-                className="absolute top-[50%] right-8 w-10 h-10 z-10"
+                className="absolute top-24 left-6 w-14 h-14"
             >
                 <Image
-                    src={p2_rightelem3}
+                    src={spice1}
                     alt="spice"
                     fill
                     className="object-contain"
                 />
             </motion.div>
-
             <motion.div
-                animate={{ y: [0, -14, 0] }}
+                animate={{ y: [0, -16, 0] }}
                 transition={{
                     duration: 9,
                     repeat: Infinity,
                     ease: "easeInOut",
                 }}
-                className="absolute bottom-[20%] right-12 w-20 h-20 z-10"
+                className="absolute bottom-32 right-10 w-16 h-16"
             >
                 <Image
-                    src={p3_leftelem1}
+                    src={spice2}
+                    alt="spice"
+                    fill
+                    className="object-contain"
+                />
+            </motion.div>
+            <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+                className="absolute top-1/2 right-4 w-10 h-10"
+            >
+                <Image
+                    src={spice3}
                     alt="spice"
                     fill
                     className="object-contain"
@@ -164,50 +126,36 @@ export default function MobileHero() {
             <AnimatePresence mode="wait">
                 <motion.div
                     key={activeItem.id}
-                    initial={{ opacity: 0, x: -40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 40 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="relative z-20 max-w-xl"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -40 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="relative z-20 text-left  max-w-md px-2 "
                 >
-                    <h1
-                        className="text-4xl sm:text-5xl font-extrabold mb-4 leading-snug tracking-tight"
-                        style={{ color: activeItem.color }}
-                    >
+                    <h1 className="text-[5vh] font-bernhc font-thin text-white mb-4 leading-none drop-shadow-md ">
                         {activeItem.heading}
                     </h1>
-
-                    <motion.p
-                        key={`sub-${activeItem.id}`}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-gray-800 text-lg sm:text-xl leading-relaxed font-medium mb-6"
-                    >
+                    <p className="text-white/90 font-glecb text-[3vh] mb-6 leading-none drop-shadow tracking-wider mt-8">
                         {activeItem.sub}
-                    </motion.p>
-
+                    </p>
                     <motion.button
-                        whileHover={{ x: 5 }}
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="text-base font-semibold relative group"
-                        style={{ color: activeItem.color }}
+                        className="px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-primary/90 transition "
                     >
-                        Learn More →
-                        <span className="block h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-current mt-1" />
+                        Explore
                     </motion.button>
                 </motion.div>
             </AnimatePresence>
 
             {/* Indicators */}
-            <div className="absolute bottom-10 left-8 flex gap-2 z-20">
+            <div className="absolute bottom-8 flex gap-2 z-20">
                 {slides.map((p, i) => (
                     <motion.div
                         key={p.id}
                         onClick={() => setActive(i)}
-                        className={`h-1.5 rounded-full cursor-pointer transition-all ${
-                            i === active ? "w-6 bg-black/80" : "w-2 bg-black/30"
+                        className={`h-2 rounded-full cursor-pointer transition-all ${
+                            i === active ? "w-6 bg-white" : "w-2 bg-white/50"
                         }`}
                     />
                 ))}
