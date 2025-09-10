@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #e31e23;
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-primary: #e31e23;
+  --color-dark: #1a1a1a;
+  --color-light: #f8f9fa;
+  --color-foreground-900: #121212;
+  /* Darkest - near black, soft */
+  --color-foreground-800: #1E1E1E;
+  --color-foreground-700: #2D2D2D;
+  --color-foreground-600: #3C3C3C;
+  --color-foreground-500: #4B4B4B;
+  --color-foreground-400: #6A6A6A;
+  --color-foreground-300: #8A8A8A;
+  --color-foreground-200: #B0B0B0;
+  --color-foreground-100: #D5D5D5;
+  /* Lightest - medium gray */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+}
+
+.polygon {
+  clip-path: polygon(0 52%, 79% 48%, 75% 74%, 0 76%);
+}
+
+.polygon-revers {
+  clip-path: polygon(22% 51%, 100% 50%, 100% 74%, 36% 75%);
+
+}
+
+button {
+  cursor: pointer;
 }
