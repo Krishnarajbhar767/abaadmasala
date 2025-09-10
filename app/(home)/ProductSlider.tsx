@@ -20,7 +20,7 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => (
     <div className="flex-shrink-0 w-40 sm:w-44 md:w-48 lg:w-56 xl:w-60 px-2">
         <div className="w-full aspect-square relative">
             <div
-                className="w-46 h-46 rounded-full bg-gray-200 absolute -bottom-[30%] left-[10%]"
+                className="w-24 h-20 sm:w-46 sm:h-46 rounded-full bg-gray-200 absolute sm:-bottom-[30%] sm:left-[10%] left-6 -bottom-[20%]"
                 style={{
                     transform: "perspective(600px) rotateX(60deg)", // tilt into 3D
                     transformOrigin: "center center",
@@ -76,7 +76,7 @@ const ProductSlider: React.FC = () => {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
         >
-            <div className="mb-8 w-full sm:w-fit mx-auto">
+            <div className="mb-8 w-full sm:w-fit mx-auto px-4">
                 <Subheading text="Explore More Authentic Flavors, Just a Click Away" />
             </div>
             {/* Infinite Scroll Container */}

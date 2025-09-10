@@ -25,7 +25,7 @@ export default function CookWithAbaadMasala() {
                 }}
             />
             <div className="h-auto w-full  px-4 py-16  relative overflow-hidden pl-0 sm:pl-14">
-                <div className="w-full sm:w-[50%] space-y-4">
+                <div className="w-full sm:w-[50%] space-y-4 px-4 sm:px-0">
                     <Heading text="Cook with Abaad Masala" />
                     <AutoParagraph
                         items={[
