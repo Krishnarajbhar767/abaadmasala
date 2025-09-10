@@ -1,10 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-    output: "export", // enables static export
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

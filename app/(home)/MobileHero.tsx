@@ -69,7 +69,7 @@ export default function MobileHero() {
 
     return (
         <section
-            className="relative h-[90vh]  w-full flex flex-col justify-center items-start px-8 lg:hidden overflow-hidden"
+            className="relative h-[90vh]  w-full flex flex-col justify-center items-start px-8 lg:hidden overflow-hidden "
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
         >

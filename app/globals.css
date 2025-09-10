@@ -2,7 +2,7 @@
 
 :root {
   --primary: #e31e23;
-
+  --font-sans: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 @theme {
@@ -20,12 +20,19 @@
   --color-foreground-200: #B0B0B0;
   --color-foreground-100: #D5D5D5;
   /* Lightest - medium gray */
+  --font-sans: var(--font-sans);
+  /* Arial fallback */
+  --font-bernhc: var(--font-bernhc), Arial, sans-serif;
+  --font-glecb: var(--font-glecb), Arial, sans-serif;
 }
 
 html,
 body {
   scroll-behavior: smooth;
   height: 100%;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *,

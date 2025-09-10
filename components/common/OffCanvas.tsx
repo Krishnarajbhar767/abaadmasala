@@ -29,7 +29,7 @@ const OffCanvas: React.FC<OffCanvasProps> = ({
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ type: "tween" }}
-                        className="fixed top-0 right-0 w-96 h-full bg-gradient-to-b from-white to-gray-50 text-black z-50 shadow-xl flex flex-col rounded-l-2xl"
+                        className="fixed top-0 right-0 w-96 h-full bg-gradient-to-b from-white to-gray-50 text-black z-50 shadow-xl flex flex-col rounded-l-2xl "
                     >
                         <div className="flex justify-between items-center p-6 border-b border-gray-200">
                             <Image

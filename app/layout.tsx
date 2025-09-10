@@ -1,14 +1,9 @@
 import "./globals.css";
-import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
+
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
-const montserrat = Montserrat({
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
-    display: "swap",
-});
 
 export const metadata: Metadata = {
     title: "Abaad Masala - Pure & Authentic Indian Spices",
@@ -49,13 +44,25 @@ export const metadata: Metadata = {
     // },
 };
 
+const bernhc = localFont({
+    src: "../public/fonts/bernhc/bernhc.ttf",
+    variable: "--font-bernhc",
+    display: "swap",
+});
+
+const glecb = localFont({
+    src: "../public/fonts/glecb/glecb.ttf",
+    variable: "--font-glecb",
+    display: "swap",
+});
+
 export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className={montserrat.className}>
+        <html lang="en" className={`${bernhc.variable} ${glecb.variable}`}>
             <body className="min-h-screen  flex flex-col ">
                 <Header />
 

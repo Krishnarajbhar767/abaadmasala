@@ -21,7 +21,7 @@ function AdvancedHeading({ heading, subheading, reverse = false }: Props) {
             viewport={{ once: true, amount: 0.5 }} // triggers when 50% visible
         >
             <h1
-                className={`text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight ${mainColor}`}
+                className={`text-3xl sm:text-3xl md:text-4xl font-light uppercase font-bernhc tracking-wide ${mainColor}`}
             >
                 {heading}
                 <motion.span

@@ -24,7 +24,7 @@ export default function CookWithAbaadMasala() {
                     backgroundRepeat: "no-repeat",
                 }}
             />
-            <div className="h-auto w-full container mx-auto px-4 py-16  relative overflow-hidden">
+            <div className="h-auto w-full  px-4 py-16  relative overflow-hidden pl-0 sm:pl-14">
                 <div className="w-full sm:w-[50%] space-y-4">
                     <Heading text="Cook with Abaad Masala" />
                     <AutoParagraph

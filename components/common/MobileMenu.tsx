@@ -22,12 +22,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ mobileOpen, navLinks }) => {
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     exit={{ height: 0 }}
-                    className="md:hidden bg-black text-white overflow-hidden px-4"
+                    className="md:hidden bg-white/20 backdrop-blur-md  border-white/30 text-gray-950 overflow-hidden px-4"
                 >
                     {navLinks.map((item) => (
                         <li
                             key={item.title}
-                            className="py-2 border-b border-gray-700"
+                            className="py-2 border-b border-gray-300"
                         >
                             {item.link ? (
                                 <Link
@@ -40,7 +40,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ mobileOpen, navLinks }) => {
                                 <details>
                                     <summary className="flex items-center justify-between py-2 px-3 cursor-pointer hover:bg-gray-800 rounded-md transition-all duration-200">
                                         <span>{item.title}</span>
-                                        <FiChevronDown className="text-gray-400" />
+                                        <FiChevronDown className="text-gray-950" />
                                     </summary>
                                     <ul className="pl-4">
                                         {item.subLinks?.map((sub) => (
@@ -53,7 +53,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ mobileOpen, navLinks }) => {
                                                     !sub.subLinks ? (
                                                         <Link
                                                             href={sub.link}
-                                                            className="flex items-center justify-between py-1.5 px-2 text-gray-300 text-sm hover:bg-gray-700 rounded-md transition-all duration-200"
+                                                            className="flex items-center justify-between py-1.5 px-2 text-gray-950 text-sm hover:bg-gray-700 rounded-md transition-all duration-200"
                                                         >
                                                             <span>
                                                                 {sub.title}
@@ -61,11 +61,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ mobileOpen, navLinks }) => {
                                                         </Link>
                                                     ) : (
                                                         <details>
-                                                            <summary className="flex items-center justify-between py-1.5 px-2 text-gray-300 text-sm cursor-pointer hover:bg-gray-700 rounded-md transition-all duration-200">
+                                                            <summary className="flex items-center justify-between py-1.5 px-2 text-gray-950 text-sm cursor-pointer hover:bg-gray-700 rounded-md transition-all duration-200">
                                                                 <span>
                                                                     {sub.title}
                                                                 </span>
-                                                                <FiChevronDown className="text-gray-400" />
+                                                                <FiChevronDown className="text-gray-900" />
                                                             </summary>
                                                             <ul className="pl-4">
                                                                 {sub.subLinks?.map(
@@ -83,7 +83,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ mobileOpen, navLinks }) => {
                                                                                     nested.link ||
                                                                                     "#"
                                                                                 }
-                                                                                className="block py-1 px-2 text-gray-400 text-xs hover:bg-gray-600 rounded-md transition-all duration-200"
+                                                                                className="block py-1 px-2 text-gray-800 text-xs hover:bg-gray-600 rounded-md transition-all duration-200"
                                                                             >
                                                                                 {
                                                                                     nested.title

@@ -70,10 +70,10 @@ export default function Header() {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 w-full transition-colors duration-300 z-50 
+                className={` fixed top-0 left-0 w-full transition-colors duration-300 z-50 
                     ${
                         scrolled || mobileOpen
-                            ? "bg-[#000000] backdrop-blur-md shadow-md"
+                            ? "bg-white/20 backdrop-blur-md  border-white/30"
                             : "bg-transparent"
                     }
                 `}
@@ -100,14 +100,14 @@ export default function Header() {
                     {/* Desktop Nav */}
                     <motion.ul
                         className={`hidden md:flex items-center gap-8 transition-colors ${
-                            scrolled || mobileOpen ? "text-white" : "text-black"
+                            scrolled || mobileOpen ? "text-black" : "text-black"
                         }`}
                         variants={containerVariants}
                     >
                         {navLinks.map((item) => (
                             <motion.li
                                 key={item.title}
-                                className="relative group cursor-pointer"
+                                className="relative group cursor-pointer font-bernhc font-extralight tracking-widest"
                                 variants={topItem}
                             >
                                 {item.link ? (
@@ -132,7 +132,7 @@ export default function Header() {
                     {/* Right Actions */}
                     <motion.div
                         className={`flex items-center gap-4 ${
-                            scrolled || mobileOpen ? "text-white" : "text-black"
+                            scrolled || mobileOpen ? "text-black" : "text-black"
                         }`}
                         variants={topItem}
                     >

@@ -26,7 +26,7 @@ function HeroSubheading({ heading, subheading, reverse = false }: Props) {
 
     return (
         <h2
-            className={`scroll-m-20 text-center text-3xl font-semibold tracking-tight capitalize ${mainColor}`}
+            className={`scroll-m-20 text-center text-3xl font-normal tracking-wider capitalize font-glecb ${mainColor}`}
         >
             {heading}
             <br />
