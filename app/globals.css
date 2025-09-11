@@ -24,6 +24,7 @@
   /* Arial fallback */
   --font-bernhc: var(--font-bernhc), Arial, sans-serif;
   --font-glecb: var(--font-glecb), Arial, sans-serif;
+  --font-kyoto: var(--font-kyoto), Arial, sans-serif;
 }
 
 html,

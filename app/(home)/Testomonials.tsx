@@ -104,7 +104,7 @@ const TestimonialSection = () => {
     };
 
     return (
-        <section className="w-full bg-gradient-to-br from-orange-50 via-white to-yellow-50 py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+        <section className="w-full bg-gradient-to-br from-orange-50 via-white to-yellow-50 py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-8 overflow-hidden">
             <div className="max-w-5xl mx-auto">
                 {/* Header */}
                 <motion.div

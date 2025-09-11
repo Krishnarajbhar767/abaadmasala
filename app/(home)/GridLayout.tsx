@@ -111,14 +111,14 @@ function SpiceGrid({
     reverse: boolean;
 }) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <div className="flex flex-col sm:flex-row  gap-6 items-start overflow-hidden">
             {/* Left Masonry Grid (images) */}
             <div
-                className={`flex gap-4 order-1 ${reverse ? "md:order-2" : "md:order-1"}`}
+                className={`flex w-[100%] sm:w-[40%] gap-4 order-1 ${reverse ? "md:order-2" : "md:order-1"}`}
             >
                 {/* Left Column */}
                 <div className="flex flex-col gap-4 flex-1">
-                    <div className="relative w-full h-[120px] sm:h-[150px]">
+                    <div className="relative w-full h-[100px] sm:h-[150px]">
                         <Image
                             src={images.small1}
                             alt="spices_small_image1"
@@ -126,7 +126,7 @@ function SpiceGrid({
                             className="object-cover "
                         />
                     </div>
-                    <div className="relative w-full h-[240px] sm:h-[300px]">
+                    <div className="relative w-full h-[200px] sm:h-[250px]">
                         <Image
                             src={images.big1}
                             alt="spices_big_image1"
@@ -138,7 +138,7 @@ function SpiceGrid({
 
                 {/* Right Column */}
                 <div className="flex flex-col gap-4 flex-1">
-                    <div className="relative w-full h-[240px] sm:h-[300px]">
+                    <div className="relative w-full h-[200px] sm:h-[250px]">
                         <Image
                             src={images.big2}
                             alt="spices_big_image2"
@@ -146,7 +146,7 @@ function SpiceGrid({
                             className="object-cover "
                         />
                     </div>
-                    <div className="relative w-full h-[120px] sm:h-[150px]">
+                    <div className="relative w-full h-[100px] sm:h-[150px]">
                         <Image
                             src={images.small2}
                             alt="spices_small_image2"
@@ -159,18 +159,30 @@ function SpiceGrid({
 
             {/* Right Side Content */}
             <div
-                className={`flex flex-col justify-center h-full  gap-4 order-2 ${reverse ? "md:order-1" : "md:order-2"}`}
+                className={`flex flex-col justify-center  self-center h-full  gap-4 order-2 ${reverse ? "md:order-1" : "md:order-2"}`}
             >
-                <div className="relative flex justify-between items-center">
+                <div className="relative ">
                     <AdvancedHeading
                         heading={heading.text}
                         subheading={heading.text2}
                     />
                     <Image
-                        height={80}
-                        width={80}
+                        height={
+                            (category === "blended" && 150) ||
+                            (category === "essential" && 120) ||
+                            (category === "grounded" && 25) ||
+                            (category === "whole" && 80) ||
+                            0
+                        }
+                        width={
+                            (category === "blended" && 150) ||
+                            (category === "essential" && 120) ||
+                            (category === "grounded" && 35) ||
+                            (category === "whole" && 80) ||
+                            0
+                        }
                         alt="Spices Supporting Element"
-                        className="object-contain hidden sm:block"
+                        className="object-contain hidden sm:block absolute right-[30%]   top-0"
                         src={
                             (category === "blended" && Blended_ELEM.src) ||
                             (category === "essential" && Essential_ELEM.src) ||

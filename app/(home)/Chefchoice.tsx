@@ -39,7 +39,7 @@ function ContentSection() {
     ];
     return (
         <div className="w-full sm:w-[50%] space-y-4  relative">
-            <h1 className="w-fit text-2xl leading-snug tracking-tighter font-thin italic text-left ">
+            <h1 className="w-fit sm:w-[70%]  text-2xl sm:text-[2rem] leading-snug tracking-widest font-kyoto font-thin  text-left sm:text-center ">
                 The Spice Behind Every <br />
                 <span className="text-primary">Masterpiece</span>
             </h1>

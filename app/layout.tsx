@@ -50,6 +50,12 @@ const bernhc = localFont({
     display: "swap",
 });
 
+const kyoto = localFont({
+    src: "../public/fonts/kyoto/kyoto.ttf",
+    variable: "--font-kyoto",
+    display: "swap",
+});
+
 const glecb = localFont({
     src: "../public/fonts/glecb/glecb.ttf",
     variable: "--font-glecb",
@@ -62,7 +68,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className={`${bernhc.variable} ${glecb.variable}`}>
+        <html
+            lang="en"
+            className={`${bernhc.variable} ${glecb.variable} ${kyoto.variable}`}
+        >
             <body className="min-h-screen  flex flex-col ">
                 <Header />
 

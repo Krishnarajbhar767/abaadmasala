@@ -70,7 +70,7 @@ export default function MobileHero() {
                 priority
                 className="object-cover absolute inset-0 -z-10"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent -z-10 overflow-hidden" />
 
             {/* Floating spices */}
             <motion.div
