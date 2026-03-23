@@ -82,10 +82,10 @@ export default function HomePage() {
             <div>
                 <GridLayout
                     reverse={true}
-                    category="whole"
+                    category='whole'
                     heading={{
-                        text: "Whole ",
-                        text2: "SPICES",
+                        text: "SEASONING ",
+                        text2: "& HERBS",
                     }}
                     quotes={"Abaad Masala – Pure. Natural. Unprocessed"}
                     paragraph="Abaad Masala's Whole Spices bring you the raw essence

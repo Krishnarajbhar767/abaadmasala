@@ -68,16 +68,16 @@ export default function GridLayout({
             big2: Whole_Big2.src,
         },
         blended: {
+            small1: Blended_Small1.src,
+            small2: Blended_Small2.src,
+            big1: Blended_Big1.src,
+            big2: Blended_Big2.src,
+        },
+        grounded: {
             small1: Whole_Small1.src,
             small2: Whole_Small2.src,
             big1: Whole_Big1.src,
             big2: Whole_Big2.src,
-        },
-        grounded: {
-            small1: Grounded_Small1.src,
-            small2: Grounded_Small2.src,
-            big1: Grounded_Big1.src,
-            big2: Grounded_Big2.src,
         },
     };
 
@@ -111,47 +111,47 @@ function SpiceGrid({
     reverse: boolean;
 }) {
     return (
-        <div className="flex flex-col sm:flex-row  gap-6 items-start overflow-hidden">
+        <div className="flex flex-col sm:flex-row  gap-6 items-end overflow-hidden">
             {/* Left Masonry Grid (images) */}
             <div
-                className={`flex w-[100%] sm:w-[40%] gap-4 order-1 ${reverse ? "md:order-2" : "md:order-1"}`}
+                className={`flex w-[100%] sm:w-[40%] gap-2 sm:gap-3 order-1 ${reverse ? "md:order-2" : "md:order-1"}`}
             >
                 {/* Left Column */}
-                <div className="flex flex-col gap-4 flex-1">
-                    <div className="relative w-full h-[100px] sm:h-[150px]">
+                <div className="flex flex-col gap-2 sm:gap-3 flex-1">
+                    <div className="relative w-full h-[120px] sm:h-[150px]">
                         <Image
                             src={images.small1}
                             alt="spices_small_image1"
                             fill
-                            className="object-cover "
+                            className="object-cover"
                         />
                     </div>
-                    <div className="relative w-full h-[200px] sm:h-[250px]">
+                    <div className="relative w-full h-[200px] sm:h-[280px]">
                         <Image
                             src={images.big1}
                             alt="spices_big_image1"
                             fill
-                            className="object-cover "
+                            className="object-cover"
                         />
                     </div>
                 </div>
 
                 {/* Right Column */}
-                <div className="flex flex-col gap-4 flex-1">
-                    <div className="relative w-full h-[200px] sm:h-[250px]">
+                <div className="flex flex-col gap-2 sm:gap-3 flex-1">
+                    <div className="relative w-full h-[200px] sm:h-[280px]">
                         <Image
                             src={images.big2}
                             alt="spices_big_image2"
                             fill
-                            className="object-cover "
+                            className="object-cover"
                         />
                     </div>
-                    <div className="relative w-full h-[100px] sm:h-[150px]">
+                    <div className="relative w-full h-[120px] sm:h-[150px]">
                         <Image
                             src={images.small2}
                             alt="spices_small_image2"
                             fill
-                            className="object-cover "
+                            className="object-cover"
                         />
                     </div>
                 </div>
@@ -159,10 +159,11 @@ function SpiceGrid({
 
             {/* Right Side Content */}
             <div
-                className={`flex flex-col justify-center  self-center h-full  gap-4 order-2 ${reverse ? "md:order-1" : "md:order-2"}`}
+                className={`flex flex-col justify-end  self-end h-full  gap-4 order-2 ${reverse ? "md:order-1" : "md:order-2"}`}
             >
                 <div className="relative ">
                     <AdvancedHeading
+                        reverse={category === "whole"}
                         heading={heading.text}
                         subheading={heading.text2}
                     />
@@ -197,7 +198,7 @@ function SpiceGrid({
                 </q>
                 <AutoParagraph items={[paragraph]} />
                 <div>
-                    <Button>Know More</Button>
+                    <Button className="bg-red-500">Know More</Button>
                 </div>
             </div>
         </div>
